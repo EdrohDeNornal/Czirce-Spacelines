@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tiefe Erfahrung Circze</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000000;
+      color: #00ffcc;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Portada */
+    #home {
+      position: relative;
+      height: 100vh;
+      background: black url('background-placeholder.jpg') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    #home h1 {
+      font-size: 4rem;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+      margin-bottom: 10px;
+    }
+    #home p {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #66ffe0;
+      text-shadow: 0 0 6px #66ffe0;
+    }
+
+    /* Navegación */
+    nav {
+      background-color: #011111;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,255,204,0.3);
+    }
+    nav a {
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    /* Secciones */
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      color: #00ffff;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #00cccc;
+      padding-bottom: 6px;
+    }
+    section p, section ul {
+      color: #00ffcc;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    section ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    /* Blockquote */
+    blockquote {
+      font-style: italic;
+      color: #66ffe0;
+      border-left: 3px solid #00cccc;
+      padding-left: 15px;
+      margin: 20px 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: #007770;
+      background-color: #011111;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      #home h1 {
+        font-size: 2.5rem;
+      }
+      #home p {
+        font-size: 1.2rem;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Portada -->
+  <section id="home">
+    <h1>Tiefe Erfahrung Circze</h1>
+    <p>The voyage you were never meant to find.</p>
+  </section>
+
+  <!-- Navegación -->
+  <nav>
+    <a href="#destinos">El que tú quieras</a>
+    <a href="#especificaciones">Especificaciones</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#tripulacion">Tripulación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- Secciones -->
+  <section id="destinos">
+    <h2>El que tú quieras</h2>
+    <p>
+      Explora destinos ocultos, secretos y únicos. Un viaje diseñado para descubrir maravillas imposibles de encontrar en mapas normales.
+    </p>
+  </section>
+
+  <section id="especificaciones">
+    <h2>Especificaciones de la Nave</h2>
+    <p>
+      La <strong>Tiefe Erfahrung Circze</strong> mide 200 metros de largo por 130 de ancho, revestida en grafito negro mate para camuflarse en la oscuridad del espacio.
+    </p>
+    <p>
+      Está equipada con un sistema defensivo avanzado, incluyendo dos SRVs para reconocimiento y un módulo lanzador de microcazas pilotados (SLF), con un hangar especial para su despliegue rápido.
+    </p>
+    <ul>
+      <li>Pasajeros: máximo 20</li>
+      <li>Tripulación: 4 + 1 chef</li>
+      <li>Armamento: defensivo, especializado en reconocimiento y defensa</li>
+      <li>Microcazas pilotados (SLF): 8 unidades</li>
+    </ul>
+  </section>
+
+  <section id="fotos">
+    <h2>Fotos</h2>
+    <p>Próximamente galería con fotos exteriores en vuelo, en tierra y del interior de la nave.</p>
+  </section>
+
+  <section id="tripulacion">
+    <h2>Tripulación</h2>
+    <p>
+      Un equipo altamente entrenado que combina experiencia en pilotaje, seguridad y hospitalidad para garantizar una experiencia inolvidable.
+    </p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>
+      Para consultas, invitaciones o más información, envíanos un mensaje y responderemos a los pocos que realmente importan.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 3309 Circze Initiative — If you're reading this, you were meant to.
+  </footer>
+</body>
+</html>

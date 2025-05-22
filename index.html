@@ -11,46 +11,45 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #000000;
       color: #00ffcc;
       scroll-behavior: smooth;
       line-height: 1.5;
+
       background-image: url('starsbackground.gif');
       background-repeat: repeat;
       background-size: auto;
       background-position: top left;
       background-attachment: fixed;
     }
+
     a {
       color: #00ffcc;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    /* Portada */
+    /* Encabezado */
     #home {
-      padding: 40px 20px 20px 20px;
+      padding: 30px 20px 20px;
       text-align: center;
     }
+
     #home h1 {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
       color: #00ffff;
       text-shadow: 0 0 10px #00ffff;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
+
     #home p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-style: italic;
       color: #66ffe0;
       text-shadow: 0 0 6px #66ffe0;
@@ -61,38 +60,45 @@
     nav {
       padding: 10px 0;
       text-align: center;
-      margin-bottom: 30px;
+      background-color: rgba(0, 17, 17, 0.6);
+      box-shadow: 0 2px 5px rgba(0,255,204,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
     nav a {
       margin: 0 15px;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.1rem;
       letter-spacing: 0.05em;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: #00ffff;
     }
 
     /* Secciones */
-    section.content-section {
-      padding: 30px 20px;
+    section {
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 0 auto 40px auto;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
+      margin: auto;
     }
+
     section h2 {
       color: #00ffff;
       margin-bottom: 15px;
       border-bottom: 2px solid #00cccc;
       padding-bottom: 6px;
     }
+
     section p, section ul {
       color: #00ffcc;
       font-size: 1.1rem;
       margin-bottom: 20px;
     }
+
     section ul {
       list-style-type: square;
       padding-left: 20px;
@@ -119,63 +125,52 @@
     /* Responsive */
     @media (max-width: 600px) {
       #home h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
+
       #home p {
         font-size: 1rem;
       }
+
       nav a {
         margin: 0 8px;
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const links = document.querySelectorAll("nav a");
-      const sections = document.querySelectorAll(".content-section");
-
-      links.forEach(link => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const id = this.getAttribute("href").substring(1);
-          sections.forEach(sec => {
-            sec.style.display = "none";
-          });
-          document.getElementById(id).style.display = "block";
-        });
-      });
-
-      sections.forEach((sec, i) => {
-        if (i !== 0) sec.style.display = "none";
-      });
-    });
-  </script>
 </head>
 <body>
-  <!-- Portada -->
+  <!-- Encabezado -->
   <section id="home">
     <h1>Tiefe Erfahrung Circze</h1>
     <p>The voyage you were never meant to find.</p>
-    <nav>
-      <a href="#destinos">El que tú quieras</a>
-      <a href="#especificaciones">Especificaciones</a>
-      <a href="#fotos">Fotos</a>
-      <a href="#tripulacion">Tripulación</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
   </section>
+
+  <!-- Navegación -->
+  <nav>
+    <a href="#destinos">El que tú quieras</a>
+    <a href="#especificaciones">Especificaciones</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#tripulacion">Tripulación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
   <!-- Secciones -->
-  <section id="destinos" class="content-section">
+  <section id="destinos">
     <h2>El que tú quieras</h2>
-    <p>Explora destinos ocultos, secretos y únicos. Un viaje diseñado para descubrir maravillas imposibles de encontrar en mapas normales.</p>
+    <p>
+      Explora destinos ocultos, secretos y únicos. Un viaje diseñado para descubrir maravillas imposibles de encontrar en mapas normales.
+    </p>
   </section>
 
-  <section id="especificaciones" class="content-section">
+  <section id="especificaciones">
     <h2>Especificaciones de la Nave</h2>
-    <p>La <strong>Tiefe Erfahrung Circze</strong> mide 200 metros de largo por 130 de ancho, revestida en grafito negro mate para camuflarse en la oscuridad del espacio.</p>
-    <p>Está equipada con un sistema defensivo avanzado, incluyendo dos SRVs para reconocimiento y un módulo lanzador de microcazas pilotados (SLF), con un hangar especial para su despliegue rápido.</p>
+    <p>
+      La <strong>Tiefe Erfahrung Circze</strong> mide 200 metros de largo por 130 de ancho, revestida en grafito negro mate para camuflarse en la oscuridad del espacio.
+    </p>
+    <p>
+      Está equipada con un sistema defensivo avanzado, incluyendo dos SRVs para reconocimiento y un módulo lanzador de microcazas pilotados (SLF), con un hangar especial para su despliegue rápido.
+    </p>
     <ul>
       <li>Pasajeros: máximo 20</li>
       <li>Tripulación: 4 + 1 chef</li>
@@ -184,19 +179,23 @@
     </ul>
   </section>
 
-  <section id="fotos" class="content-section">
+  <section id="fotos">
     <h2>Fotos</h2>
     <p>Próximamente galería con fotos exteriores en vuelo, en tierra y del interior de la nave.</p>
   </section>
 
-  <section id="tripulacion" class="content-section">
+  <section id="tripulacion">
     <h2>Tripulación</h2>
-    <p>Un equipo altamente entrenado que combina experiencia en pilotaje, seguridad y hospitalidad para garantizar una experiencia inolvidable.</p>
+    <p>
+      Un equipo altamente entrenado que combina experiencia en pilotaje, seguridad y hospitalidad para garantizar una experiencia inolvidable.
+    </p>
   </section>
 
-  <section id="contacto" class="content-section">
+  <section id="contacto">
     <h2>Contacto</h2>
-    <p>Para consultas, invitaciones o más información, envíanos un mensaje y responderemos a los pocos que realmente importan.</p>
+    <p>
+      Para consultas, invitaciones o más información, envíanos un mensaje y responderemos a los pocos que realmente importan.
+    </p>
   </section>
 
   <footer>

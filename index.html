@@ -1,116 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tiefe Erfahrung</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body, html {
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      color: #adff2f; /* Green-yellow */
-      font-family: 'Courier New', Courier, monospace;
-    }
-    .intro {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
-    .intro h1 {
-      font-size: 3rem;
-      text-shadow: 0 0 10px #adff2f;
-    }
-    .main-page {
-      display: none;
-      width: 100%;
-      height: 100vh;
-      background-image: url('starsbackground.gif');
-      background-repeat: repeat;
-      background-position: top left;
-      background-attachment: fixed;
-      position: relative;
-    }
-    .title {
-      text-align: center;
-      padding-top: 60px;
-      font-size: 2.5rem;
-      color: #adff2f;
-      text-shadow: 0 0 5px #adff2f;
-    }
-    .circle-links {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      height: 300px;
-    }
-    .circle-links a {
-      position: absolute;
-      color: #adff2f;
-      text-decoration: none;
-      font-size: 0.9rem;
-      background-color: rgba(0,0,0,0.5);
-      padding: 4px 8px;
-      border-radius: 4px;
-      text-align: center;
-      transition: all 0.3s;
-    }
-    .circle-links a:hover {
-      background-color: #222;
-    }
-    /* Positioning links in circle */
-    .circle-links a:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
-    .circle-links a:nth-child(2) { top: 25%; left: 0; transform: translateY(-50%); }
-    .circle-links a:nth-child(3) { top: 75%; left: 0; transform: translateY(-50%); }
-    .circle-links a:nth-child(4) { top: 100%; left: 50%; transform: translate(-50%, -100%); }
-    .circle-links a:nth-child(5) { top: 75%; left: 100%; transform: translate(-100%, -50%); }
-    .circle-links a:nth-child(6) { top: 25%; left: 100%; transform: translate(-100%, -50%); }
 
-    .content {
-      display: none;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-  <div class="intro" onclick="enterMainPage()">
-    <h1>Tiefe Erfahrung</h1>
-  </div>
+  <div id="intro" onclick="showMain()">Tiefe Erfahrung</div>
 
-  <div class="main-page">
-    <div class="title">Tiefe Erfahrung Circze</div>
-    <div class="circle-links">
-      <a href="#" onclick="showContent('destino')">Destino</a>
-      <a href="#" onclick="showContent('nave')">Nave</a>
-      <a href="#" onclick="showContent('tripulacion')">Tripulación</a>
-      <a href="#" onclick="showContent('mision')">Circze's Mission</a>
-      <a href="#" onclick="showContent('vuelo')">Vuelo 5763 experience</a>
-      <a href="#" onclick="showContent('contacto')">Contacto</a>
-    </div>
-    <div class="content" id="content">Under construction</div>
+  <div id="main">
+    <div id="title">Tiefe Erfahrung Circze</div>
+    <div class="link" id="link1" onclick="showContent('Destino')">Destino</div>
+    <div class="link" id="link2" onclick="showContent('Nave')">Nave</div>
+    <div class="link" id="link3" onclick="showContent('Tripulación')">Tripulación</div>
+    <div class="link" id="link4" onclick="showContent('Circze\'s Mission')">Circze's Mission</div>
+    <div class="link" id="link5" onclick="showContent('Vuelo 5763 Experience')">Vuelo 5763 Experience</div>
+    <div class="link" id="link6" onclick="showContent('Contacto')">Contacto</div>
+    <div id="content">&nbsp;</div>
   </div>
 
   <script>
-    function enterMainPage() {
-      document.querySelector('.intro').style.display = 'none';
-      document.querySelector('.main-page').style.display = 'block';
+    function showMain() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
     }
-    function showContent(section) {
-      const content = document.getElementById('content');
-      content.innerText = `Sección "${section}" está under construction.`;
-      content.style.display = 'block';
+
+    function showContent(text) {
+      document.getElementById('content').innerText = text + ' - under construction';
     }
   </script>
 </body>

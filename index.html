@@ -2,204 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tiefe Erfahrung Circze</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiefe Erfahrung</title>
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000000;
-      color: #00ffcc;
-      scroll-behavior: smooth;
-      line-height: 1.5;
-
+    body, html {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: #adff2f; /* Green-yellow */
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .intro {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .intro h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #adff2f;
+    }
+    .main-page {
+      display: none;
+      width: 100%;
+      height: 100vh;
       background-image: url('starsbackground.gif');
       background-repeat: repeat;
-      background-size: auto;
       background-position: top left;
       background-attachment: fixed;
+      position: relative;
     }
-
-    a {
-      color: #00ffcc;
+    .title {
+      text-align: center;
+      padding-top: 60px;
+      font-size: 2.5rem;
+      color: #adff2f;
+      text-shadow: 0 0 5px #adff2f;
+    }
+    .circle-links {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+    }
+    .circle-links a {
+      position: absolute;
+      color: #adff2f;
       text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Encabezado */
-    #home {
-      padding: 30px 20px 20px;
-      text-align: center;
-    }
-
-    #home h1 {
-      font-size: 2.2rem;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff;
-      margin-bottom: 5px;
-    }
-
-    #home p {
-      font-size: 1.1rem;
-      font-style: italic;
-      color: #66ffe0;
-      text-shadow: 0 0 6px #66ffe0;
-      margin-bottom: 20px;
-    }
-
-    /* Navegación */
-    nav {
-      padding: 10px 0;
-      text-align: center;
-      background-color: rgba(0, 17, 17, 0.6);
-      box-shadow: 0 2px 5px rgba(0,255,204,0.3);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav a {
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #00ffff;
-    }
-
-    /* Secciones */
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h2 {
-      color: #00ffff;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #00cccc;
-      padding-bottom: 6px;
-    }
-
-    section p, section ul {
-      color: #00ffcc;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    section ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    /* Blockquote */
-    blockquote {
-      font-style: italic;
-      color: #66ffe0;
-      border-left: 3px solid #00cccc;
-      padding-left: 15px;
-      margin: 20px 0;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 15px 0;
       font-size: 0.9rem;
-      color: #007770;
-      background-color: #011111;
+      background-color: rgba(0,0,0,0.5);
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-align: center;
+      transition: all 0.3s;
     }
+    .circle-links a:hover {
+      background-color: #222;
+    }
+    /* Positioning links in circle */
+    .circle-links a:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+    .circle-links a:nth-child(2) { top: 25%; left: 0; transform: translateY(-50%); }
+    .circle-links a:nth-child(3) { top: 75%; left: 0; transform: translateY(-50%); }
+    .circle-links a:nth-child(4) { top: 100%; left: 50%; transform: translate(-50%, -100%); }
+    .circle-links a:nth-child(5) { top: 75%; left: 100%; transform: translate(-100%, -50%); }
+    .circle-links a:nth-child(6) { top: 25%; left: 100%; transform: translate(-100%, -50%); }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      #home h1 {
-        font-size: 1.8rem;
-      }
-
-      #home p {
-        font-size: 1rem;
-      }
-
-      nav a {
-        margin: 0 8px;
-        font-size: 1rem;
-      }
+    .content {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
-  <!-- Encabezado -->
-  <section id="home">
-    <h1>Tiefe Erfahrung Circze</h1>
-    <p>The voyage you were never meant to find.</p>
-  </section>
+  <div class="intro" onclick="enterMainPage()">
+    <h1>Tiefe Erfahrung</h1>
+  </div>
 
-  <!-- Navegación -->
-  <nav>
-    <a href="#destinos">El que tú quieras</a>
-    <a href="#especificaciones">Especificaciones</a>
-    <a href="#fotos">Fotos</a>
-    <a href="#tripulacion">Tripulación</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+  <div class="main-page">
+    <div class="title">Tiefe Erfahrung Circze</div>
+    <div class="circle-links">
+      <a href="#" onclick="showContent('destino')">Destino</a>
+      <a href="#" onclick="showContent('nave')">Nave</a>
+      <a href="#" onclick="showContent('tripulacion')">Tripulación</a>
+      <a href="#" onclick="showContent('mision')">Circze's Mission</a>
+      <a href="#" onclick="showContent('vuelo')">Vuelo 5763 experience</a>
+      <a href="#" onclick="showContent('contacto')">Contacto</a>
+    </div>
+    <div class="content" id="content">Under construction</div>
+  </div>
 
-  <!-- Secciones -->
-  <section id="destinos">
-    <h2>El que tú quieras</h2>
-    <p>
-      Explora destinos ocultos, secretos y únicos. Un viaje diseñado para descubrir maravillas imposibles de encontrar en mapas normales.
-    </p>
-  </section>
-
-  <section id="especificaciones">
-    <h2>Especificaciones de la Nave</h2>
-    <p>
-      La <strong>Tiefe Erfahrung Circze</strong> mide 200 metros de largo por 130 de ancho, revestida en grafito negro mate para camuflarse en la oscuridad del espacio.
-    </p>
-    <p>
-      Está equipada con un sistema defensivo avanzado, incluyendo dos SRVs para reconocimiento y un módulo lanzador de microcazas pilotados (SLF), con un hangar especial para su despliegue rápido.
-    </p>
-    <ul>
-      <li>Pasajeros: máximo 20</li>
-      <li>Tripulación: 4 + 1 chef</li>
-      <li>Armamento: defensivo, especializado en reconocimiento y defensa</li>
-      <li>Microcazas pilotados (SLF): 8 unidades</li>
-    </ul>
-  </section>
-
-  <section id="fotos">
-    <h2>Fotos</h2>
-    <p>Próximamente galería con fotos exteriores en vuelo, en tierra y del interior de la nave.</p>
-  </section>
-
-  <section id="tripulacion">
-    <h2>Tripulación</h2>
-    <p>
-      Un equipo altamente entrenado que combina experiencia en pilotaje, seguridad y hospitalidad para garantizar una experiencia inolvidable.
-    </p>
-  </section>
-
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>
-      Para consultas, invitaciones o más información, envíanos un mensaje y responderemos a los pocos que realmente importan.
-    </p>
-  </section>
-
-  <footer>
-    &copy; 3309 Circze Initiative — If you're reading this, you were meant to.
-  </footer>
+  <script>
+    function enterMainPage() {
+      document.querySelector('.intro').style.display = 'none';
+      document.querySelector('.main-page').style.display = 'block';
+    }
+    function showContent(section) {
+      const content = document.getElementById('content');
+      content.innerText = `Sección "${section}" está under construction.`;
+      content.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
